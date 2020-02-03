@@ -1,0 +1,6 @@
+﻿  BaseGame.cpp
+  Game.cpp
+  main.cpp
+  Code wird generiert...
+C:\Users\David\source\repos\SuperMarioWar\SuperMarioWar\main.cpp(27,2): warning C4551:  Dem Funktionsaufruf fehlt die Argumentliste
+  SuperMarioWar.vcxproj -> C:\Users\David\source\repos\SuperMarioWar\Debug\SuperMarioWar.exe
