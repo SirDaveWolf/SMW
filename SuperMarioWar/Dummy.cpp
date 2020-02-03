@@ -36,6 +36,26 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 	if (_body.TopLeft().X < 0 || _body.TopRight().X > _renderOptions.ScreenWidth)
 		_xVelocity *= -1.0f;
 
+	for (auto checkEntity : dummies)
+	{
+		if (this != checkEntity)
+		{
+			auto dummy = (Dummy*)checkEntity;
+			if (_body.CheckCollisionWith(dummy->_body))
+			{
+				_xVelocity *= -1.0f;
+				/*if (_xVelocity < 0.0f)
+				{
+					
+				}
+				else if (_xVelocity > 0.0f)
+				{
+
+				}*/
+			}
+		}
+	}
+
 	_body.Y += _yVelocity;
 	if (_body.TopLeft().Y < 0 || _body.BottomLeft().Y > _renderOptions.ScreenHeight)
 		_yVelocity *= -1.0f;
@@ -45,9 +65,9 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 		if (this != checkEntity)
 		{
 			auto dummy = (Dummy*)checkEntity;
-			if (_body.CheckCollisionWith(dummy->_body, _xVelocity, _yVelocity))
+			if (_body.CheckCollisionWith(dummy->_body))
 			{
-				_xVelocity *= -1.0f;
+				_yVelocity *= -1.0f;
 			}
 		}
 	}

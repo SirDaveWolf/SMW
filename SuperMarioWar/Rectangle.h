@@ -54,34 +54,13 @@ namespace SMW
 			return Point<T>(X + Width, Y + Height);
 		}
 
-		bool CheckCollisionWith(const Rectangle<T>& other, float xVelocity, float yVelocity)
+		bool CheckCollisionWith(const Rectangle<T>& other)
 		{
-			if (xVelocity < 0.0f && yVelocity < 0.0f)
-			{
-				if (TopLeft().X < other.BottomRight().X &&
-					TopLeft().Y < other.BottomRight().Y)
-					return true;
-			}
-			else if (xVelocity > 0.0f && yVelocity < 0.0f)
-			{
-				if (TopRight().X > other.BottomLeft().X &&
-					TopRight().Y < other.BottomLeft().Y)
-					return true;
-			}
-			else if (xVelocity < 0.0f && yVelocity > 0.0f)
-			{
-				if (BottomLeft().X < other.TopRight().X &&
-					BottomLeft().Y > other.TopRight().Y)
-					return true;
-			}
-			else if(xVelocity > 0.0f && yVelocity > 0.0f)
-			{
-				if (BottomRight().X > other.TopLeft().X &&
-					BottomRight().Y > other.TopLeft().Y)
-					return true;
-			}
+			if (X < other.X && X > other.X + other.Width &&
+				Y < other.Y && Y > other.Y + other.Height)
+				return false;
 
-			return false;
+			return true;
 		}
 
 		T X;
