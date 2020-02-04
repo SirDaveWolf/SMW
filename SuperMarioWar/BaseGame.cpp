@@ -55,6 +55,7 @@ bool SMW::BaseGame::Initialize(int argc, char** argv)
 
 bool SMW::BaseGame::LoadSettings()
 {
+	srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 	bool result = true;
 	try
 	{
@@ -87,7 +88,7 @@ void SMW::BaseGame::Run()
 
 		glfwPollEvents();
 
-		auto diff = std::chrono::milliseconds((std::chrono::high_resolution_clock::now().time_since_epoch().count()) - start);
+		auto diff = std::chrono::nanoseconds((std::chrono::high_resolution_clock::now().time_since_epoch().count()) - start);
 		auto waitTime = (long long)(1000.0 / _gameOptions.MaxFPS * 1000000.0) - diff.count();
 		if (waitTime < 0) waitTime = 0;
 		std::this_thread::sleep_for(std::chrono::nanoseconds(waitTime));

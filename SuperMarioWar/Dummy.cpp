@@ -4,15 +4,15 @@
 SMW::Dummy::Dummy(const GameOptions& gameOptions)
 	: BaseEntity(gameOptions), _body(0.0f, 0.0f, gameOptions.BaseEntityWidth, gameOptions.BaseEntityHeight)
 {
-	_xVelocity = 1.0f;
-	_yVelocity = 1.0f;
+	_xVelocity = rand() % 3 + 1.5f;
+	_yVelocity = rand() % 3 + 1.5f;
 }
 
 SMW::Dummy::Dummy(const GameOptions& gameOptions, const Point<float>& initialPosition)
 	: BaseEntity(gameOptions), _body(initialPosition, gameOptions.BaseEntityWidth, gameOptions.BaseEntityHeight)
 {
-	_xVelocity = 1.0f;
-	_yVelocity = 1.0f;
+	_xVelocity = rand() % 3 + 1.5f;
+	_yVelocity = rand() % 3 + 1.5f;
 }
 
 void SMW::Dummy::Render()
@@ -32,7 +32,9 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 {
 	_body.X += _xVelocity;
 	if (_body.TopLeft().X < 0 || _body.TopRight().X > _gameOptions.ScreenWidth)
+	{
 		_xVelocity *= -1.0f;
+	}
 
 	for (auto checkEntity : dummies)
 	{
@@ -43,21 +45,15 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 			{
 				_body.X -= _xVelocity;
 				_xVelocity *= -1.0f;
-				/*if (_xVelocity < 0.0f)
-				{
-					
-				}
-				else if (_xVelocity > 0.0f)
-				{
-
-				}*/
 			}
 		}
 	}
 
 	_body.Y += _yVelocity;
 	if (_body.TopLeft().Y < 0 || _body.BottomLeft().Y > _gameOptions.ScreenHeight)
+	{
 		_yVelocity *= -1.0f;
+	}
 
 	for (auto checkEntity : dummies)
 	{
