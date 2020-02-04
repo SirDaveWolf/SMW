@@ -7,8 +7,8 @@ namespace SMW
 	class Dummy : public BaseEntity
 	{
 	public:
-		Dummy(const RenderOptions&);
-		Dummy(const RenderOptions&, const Point<float>&);
+		Dummy(const GameOptions&);
+		Dummy(const GameOptions&, const Point<float>&);
 
 		virtual void Render();
 		virtual void Think(const std::vector<BaseEntity*>&);

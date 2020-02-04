@@ -1,14 +1,6 @@
-﻿  BaseEntity.cpp
-  BaseGame.cpp
-C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\BaseGame.cpp(43,2): warning C4551: Dem Funktionsaufruf fehlt die Argumentliste
-  Dummy.cpp
-  Game.cpp
-  main.cpp
-  RenderOptions.cpp
-  Code wird generiert...
+﻿  Dummy.cpp
 C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(39): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(54): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
 C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(44): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
+C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(54): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
 C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(49): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-LINK : warning LNK4098: Standardbibliothek "MSVCRT" steht in Konflikt mit anderen Bibliotheken; /NODEFAULTLIB:Bibliothek verwenden.
   SuperMarioWar.vcxproj -> C:\Users\maciejewski\Source\Repos\SMW\x64\Debug\SuperMarioWar.exe

@@ -19,10 +19,10 @@ SMW::Game::~Game()
 
 bool SMW::Game::InitializeGame(int argc, char** argv)
 {
-	_dummies.push_back(new Dummy(_renderOptions, Point<float>(0.0f, 0.0f)));
-	_dummies.push_back(new Dummy(_renderOptions, Point<float>(64.0f, 0.0f)));
-	_dummies.push_back(new Dummy(_renderOptions, Point<float>(0.0f, 64.0f)));
-	_dummies.push_back(new Dummy(_renderOptions, Point<float>(64.0f, 64.0f)));
+	_dummies.push_back(new Dummy(_gameOptions, Point<float>(0.0f, 0.0f)));
+	_dummies.push_back(new Dummy(_gameOptions, Point<float>(64.0f, 0.0f)));
+	_dummies.push_back(new Dummy(_gameOptions, Point<float>(0.0f, 64.0f)));
+	_dummies.push_back(new Dummy(_gameOptions, Point<float>(64.0f, 64.0f)));
 	return true;
 }
 

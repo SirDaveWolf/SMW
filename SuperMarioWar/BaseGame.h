@@ -21,7 +21,7 @@ namespace SMW
 
 		void Terminate();
 
-		RenderOptions _renderOptions;
+		GameOptions _gameOptions;
 
 	private:
 

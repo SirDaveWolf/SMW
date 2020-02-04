@@ -1,18 +1,18 @@
 #include "Dummy.h"
 #include "IncludeGL.h"
 
-SMW::Dummy::Dummy(const RenderOptions& renderOptions)
+SMW::Dummy::Dummy(const GameOptions& renderOptions)
 	: BaseEntity(renderOptions)
 {
-	_body = Rectangle<float>(0.0f, 0.0f, _renderOptions.BaseEntityWidth, _renderOptions.BaseEntityHeight);
+	_body = Rectangle<float>(0.0f, 0.0f, _gameOptions.BaseEntityWidth, _gameOptions.BaseEntityHeight);
 	_xVelocity = 1.0f;
 	_yVelocity = 1.0f;
 }
 
-SMW::Dummy::Dummy(const RenderOptions& renderOptions, const Point<float>& initialPosition)
-	: BaseEntity(renderOptions)
+SMW::Dummy::Dummy(const GameOptions& gameOptions, const Point<float>& initialPosition)
+	: BaseEntity(gameOptions)
 {
-	_body = Rectangle<float>(initialPosition, _renderOptions.BaseEntityWidth, _renderOptions.BaseEntityHeight);
+	_body = Rectangle<float>(initialPosition, _gameOptions.BaseEntityWidth, _gameOptions.BaseEntityHeight);
 	_xVelocity = 1.0f;
 	_yVelocity = 1.0f;
 }
@@ -33,7 +33,7 @@ void SMW::Dummy::Render()
 void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 {
 	_body.X += _xVelocity;
-	if (_body.TopLeft().X < 0 || _body.TopRight().X > _renderOptions.ScreenWidth)
+	if (_body.TopLeft().X < 0 || _body.TopRight().X > _gameOptions.ScreenWidth)
 		_xVelocity *= -1.0f;
 
 	for (auto checkEntity : dummies)
@@ -43,7 +43,9 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 			auto dummy = (Dummy*)checkEntity;
 			if (_body.CheckCollisionWith(dummy->_body))
 			{
+				_body.X -= _xVelocity;
 				_xVelocity *= -1.0f;
+				dummy->_xVelocity *= -1;
 				/*if (_xVelocity < 0.0f)
 				{
 					
@@ -57,7 +59,7 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 	}
 
 	_body.Y += _yVelocity;
-	if (_body.TopLeft().Y < 0 || _body.BottomLeft().Y > _renderOptions.ScreenHeight)
+	if (_body.TopLeft().Y < 0 || _body.BottomLeft().Y > _gameOptions.ScreenHeight)
 		_yVelocity *= -1.0f;
 
 	for (auto checkEntity : dummies)
@@ -67,7 +69,9 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 			auto dummy = (Dummy*)checkEntity;
 			if (_body.CheckCollisionWith(dummy->_body))
 			{
+				_body.Y -= _yVelocity;
 				_yVelocity *= -1.0f;
+				dummy->_yVelocity *= -1;
 			}
 		}
 	}

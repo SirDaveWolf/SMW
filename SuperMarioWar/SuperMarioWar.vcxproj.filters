@@ -24,9 +24,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="RenderOptions.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="BaseEntity.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>

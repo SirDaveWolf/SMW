@@ -56,8 +56,8 @@ namespace SMW
 
 		bool CheckCollisionWith(const Rectangle<T>& other)
 		{
-			if (X < other.X && X > other.X + other.Width &&
-				Y < other.Y && Y > other.Y + other.Height)
+			if ((X + Width < other.X || X > other.X + other.Width) &&
+				(Y + Height < other.Y || Y > other.Y + other.Height))
 				return false;
 
 			return true;

@@ -1,5 +1,5 @@
 #pragma once
-struct RenderOptions
+struct GameOptions
 {
 	float BaseEntityWidth;
 	float BaseEntityHeight;
@@ -7,6 +7,6 @@ struct RenderOptions
 	float ScreenWidth;
 	float ScreenHeight;
 
-	float MaxFPS;
+	double MaxFPS;
 };
 

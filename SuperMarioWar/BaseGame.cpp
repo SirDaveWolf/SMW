@@ -1,15 +1,18 @@
 #include "BaseGame.h"
 #include <fstream>
+#include <chrono>
+#include <thread>
+#include <iostream>
 
 SMW::BaseGame::BaseGame()
 	: _gameWindow(nullptr), _terminated(true)
 {
-	_renderOptions = RenderOptions();
-	_renderOptions.MaxFPS = 60;
-	_renderOptions.ScreenWidth = 640;
-	_renderOptions.ScreenHeight = 480;
-	_renderOptions.BaseEntityWidth = _renderOptions.ScreenWidth / 20.0f;
-	_renderOptions.BaseEntityHeight = _renderOptions.ScreenHeight / 15.0f;
+	_gameOptions = GameOptions();
+	_gameOptions.MaxFPS = 60;
+	_gameOptions.ScreenWidth = 640;
+	_gameOptions.ScreenHeight = 480;
+	_gameOptions.BaseEntityWidth = _gameOptions.ScreenWidth / 20.0f;
+	_gameOptions.BaseEntityHeight = _gameOptions.ScreenHeight / 15.0f;
 }
 
 SMW::BaseGame::~BaseGame()
@@ -77,10 +80,17 @@ void SMW::BaseGame::Run()
 {
 	while (!glfwWindowShouldClose(_gameWindow))
 	{
+		auto start = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+
 		DoRender();
 		DoThink();
 
 		glfwPollEvents();
+
+		auto diff = std::chrono::milliseconds((std::chrono::high_resolution_clock::now().time_since_epoch().count()) - start);
+		auto waitTime = (long long)(1000.0 / _gameOptions.MaxFPS * 1000000.0) - diff.count();
+		if (waitTime < 0) waitTime = 0;
+		std::this_thread::sleep_for(std::chrono::nanoseconds(waitTime));
 	}
 }
 
