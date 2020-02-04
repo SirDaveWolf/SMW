@@ -13,6 +13,8 @@ namespace SMW
 		virtual void Render();
 		virtual void Think(const std::vector<BaseEntity*>&);
 
+		virtual bool CollideWith(const BaseEntity&);
+
 	private:
 		SMW::Rectangle<float> _body;
 		float _xVelocity;

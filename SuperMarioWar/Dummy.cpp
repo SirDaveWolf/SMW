@@ -1,18 +1,16 @@
 #include "Dummy.h"
 #include "IncludeGL.h"
 
-SMW::Dummy::Dummy(const GameOptions& renderOptions)
-	: BaseEntity(renderOptions)
+SMW::Dummy::Dummy(const GameOptions& gameOptions)
+	: BaseEntity(gameOptions), _body(0.0f, 0.0f, gameOptions.BaseEntityWidth, gameOptions.BaseEntityHeight)
 {
-	_body = Rectangle<float>(0.0f, 0.0f, _gameOptions.BaseEntityWidth, _gameOptions.BaseEntityHeight);
 	_xVelocity = 1.0f;
 	_yVelocity = 1.0f;
 }
 
 SMW::Dummy::Dummy(const GameOptions& gameOptions, const Point<float>& initialPosition)
-	: BaseEntity(gameOptions)
+	: BaseEntity(gameOptions), _body(initialPosition, gameOptions.BaseEntityWidth, gameOptions.BaseEntityHeight)
 {
-	_body = Rectangle<float>(initialPosition, _gameOptions.BaseEntityWidth, _gameOptions.BaseEntityHeight);
 	_xVelocity = 1.0f;
 	_yVelocity = 1.0f;
 }
@@ -45,7 +43,6 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 			{
 				_body.X -= _xVelocity;
 				_xVelocity *= -1.0f;
-				dummy->_xVelocity *= -1;
 				/*if (_xVelocity < 0.0f)
 				{
 					
@@ -71,8 +68,12 @@ void SMW::Dummy::Think(const std::vector<BaseEntity*>& dummies)
 			{
 				_body.Y -= _yVelocity;
 				_yVelocity *= -1.0f;
-				dummy->_yVelocity *= -1;
 			}
 		}
 	}
+}
+
+bool SMW::Dummy::CollideWith(const BaseEntity& other)
+{
+	return true;
 }

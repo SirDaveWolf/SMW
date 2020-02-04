@@ -7,9 +7,6 @@ namespace SMW
 	class Rectangle
 	{
 	public:
-		Rectangle()
-		{}
-
 		Rectangle(const Rectangle& rectangle)
 		{
 			X = rectangle.X;
@@ -56,11 +53,11 @@ namespace SMW
 
 		bool CheckCollisionWith(const Rectangle<T>& other)
 		{
-			if ((X + Width < other.X || X > other.X + other.Width) &&
-				(Y + Height < other.Y || Y > other.Y + other.Height))
-				return false;
+			if (X + Width > other.X && X < other.X + other.Width &&
+				Y + Height > other.Y && Y < other.Y + other.Height)
+				return true;
 
-			return true;
+			return false;
 		}
 
 		T X;

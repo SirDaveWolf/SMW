@@ -6,9 +6,6 @@ namespace SMW
 	class Point
 	{
 	public:
-		Point()
-		{}
-
 		Point(const Point& point)
 		{
 			X = point.X;
