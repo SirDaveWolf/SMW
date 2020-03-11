@@ -1,9 +1,7 @@
 ﻿  Dummy.cpp
-  Game.cpp
-  main.cpp
-  Code wird generiert...
-C:\Users\David\source\repos\SMW\SuperMarioWar\Rectangle.h(39): warning C4172:  Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-C:\Users\David\source\repos\SMW\SuperMarioWar\Rectangle.h(44): warning C4172:  Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-C:\Users\David\source\repos\SMW\SuperMarioWar\Rectangle.h(54): warning C4172:  Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-C:\Users\David\source\repos\SMW\SuperMarioWar\Rectangle.h(49): warning C4172:  Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-  SuperMarioWar.vcxproj -> C:\Users\David\source\repos\SMW\x64\Debug\SuperMarioWar.exe
+C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(36): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
+C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(41): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
+C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(51): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
+C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(46): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
+LINK : warning LNK4098: Standardbibliothek "MSVCRT" steht in Konflikt mit anderen Bibliotheken; /NODEFAULTLIB:Bibliothek verwenden.
+  SuperMarioWar.vcxproj -> C:\Users\maciejewski\source\repos\SMW\x64\Debug\SuperMarioWar.exe

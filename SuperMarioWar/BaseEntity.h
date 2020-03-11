@@ -7,12 +7,14 @@ namespace SMW
 	class BaseEntity
 	{
 	public:
-		BaseEntity(const RenderOptions&);
+		BaseEntity(const GameOptions&);
 		virtual void Render() = 0;
 		virtual void Think(const std::vector<BaseEntity*>&) = 0;
 
+		virtual bool CollideWith(const BaseEntity&) = 0;
+
 	protected:
-		const RenderOptions& _renderOptions;
+		const GameOptions& _gameOptions;
 	};
 }
 

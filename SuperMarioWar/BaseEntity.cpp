@@ -1,6 +1,6 @@
 #include "BaseEntity.h"
 
-SMW::BaseEntity::BaseEntity(const RenderOptions& renderOptions)
-	: _renderOptions(renderOptions)
+SMW::BaseEntity::BaseEntity(const GameOptions& gameOptions)
+	: _gameOptions(gameOptions)
 {
 }

@@ -6,9 +6,6 @@ namespace SMW
 	class Point
 	{
 	public:
-		Point()
-		{}
-
 		Point(const Point& point)
 		{
 			X = point.X;
@@ -26,22 +23,22 @@ namespace SMW
 			return other.X;
 		}
 
-		friend inline bool operator>(const Point<T> left, const Point<T>& right)
+		friend inline bool operator>(const Point<T>& left, const Point<T>& right)
 		{
 			return left.X > right.X && left.Y > right.Y;
 		}
 
-		friend inline bool operator>=(const Point<T> left, const Point<T>& right)
+		friend inline bool operator>=(const Point<T>& left, const Point<T>& right)
 		{
 			return left.X >= right.X && left.Y >= right.Y;
 		}
 
-		friend inline bool operator<(const Point<T> left, const Point<T>& right)
+		friend inline bool operator<(const Point<T>& left, const Point<T>& right)
 		{
 			return left.X < right.X && left.Y < right.Y;
 		}
 
-		friend inline bool operator<=(const Point<T> left, const Point<T>& right)
+		friend inline bool operator<=(const Point<T>& left, const Point<T>& right)
 		{
 			return left.X <= right.X && left.Y <= right.Y;
 		}
