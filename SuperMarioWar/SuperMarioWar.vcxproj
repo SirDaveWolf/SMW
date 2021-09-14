@@ -135,8 +135,10 @@
     <ClInclude Include="BaseEntity.h" />
     <ClInclude Include="BaseGame.h" />
     <ClInclude Include="Dummy.h" />
+    <ClInclude Include="File.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="IncludeGL.h" />
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="RenderOptions.h" />

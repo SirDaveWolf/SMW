@@ -1,7 +1,10 @@
-﻿  Dummy.cpp
-C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(36): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(41): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(51): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
-C:\Users\maciejewski\source\repos\SMW\SuperMarioWar\Rectangle.h(46): warning C4172: Adresse einer lokalen Variablen oder eines temporären Werts "" wird zurückgegeben
+﻿  BaseGame.cpp
+C:\Users\David\source\repos\SMW\SuperMarioWar\BaseGame.cpp(40,12): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
+C:\Users\David\source\repos\SMW\SuperMarioWar\BaseGame.cpp(41,13): warning C4244: "Initialisierung": Konvertierung von "float" in "int", möglicher Datenverlust
+C:\Users\David\source\repos\SMW\SuperMarioWar\BaseGame.cpp(69,69): warning C4244: "Argument": Konvertierung von "_Rep" in "unsigned int", möglicher Datenverlust
+          with
+          [
+              _Rep=__int64
+          ]
 LINK : warning LNK4098: Standardbibliothek "MSVCRT" steht in Konflikt mit anderen Bibliotheken; /NODEFAULTLIB:Bibliothek verwenden.
-  SuperMarioWar.vcxproj -> C:\Users\maciejewski\source\repos\SMW\x64\Debug\SuperMarioWar.exe
+  SuperMarioWar.vcxproj -> C:\Users\David\source\repos\SMW\x64\Debug\SuperMarioWar.exe

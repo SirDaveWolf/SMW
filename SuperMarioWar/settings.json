@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "MaxFPS": 120,
+    "ScreenWidth": 1920,
+    "ScreenHeight": 1080,
+    "BaseEntityWidth": 64,
+    "BaseEntityHeight": 64
+  }
+}

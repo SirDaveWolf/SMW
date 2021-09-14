@@ -1,5 +1,9 @@
 #include "Game.h"
 
+#include <iostream>
+
+using namespace std;
+
 SMW::Game::Game()
 {
 }
@@ -19,10 +23,13 @@ SMW::Game::~Game()
 
 bool SMW::Game::InitializeGame(int argc, char** argv)
 {
+	cout << "Initializing SMW game..." << endl;
 	_dummies.push_back(new Dummy(_gameOptions, Point<float>(0.0f, 0.0f)));
 	_dummies.push_back(new Dummy(_gameOptions, Point<float>(64.0f, 0.0f)));
 	_dummies.push_back(new Dummy(_gameOptions, Point<float>(0.0f, 64.0f)));
 	_dummies.push_back(new Dummy(_gameOptions, Point<float>(64.0f, 64.0f)));
+
+	cout << "Done." << endl << endl;
 	return true;
 }
 

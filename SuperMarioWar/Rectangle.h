@@ -31,22 +31,22 @@ namespace SMW
 			Height = height;
 		}
 
-		const Point<T>& TopLeft() const
+		const Point<T> TopLeft() const
 		{
 			return Point<T>(X, Y);
 		}
 
-		const Point<T>& TopRight() const
+		const Point<T> TopRight() const
 		{
 			return Point<T>(X + Width, Y);
 		}
 
-		const Point<T>& BottomLeft() const
+		const Point<T> BottomLeft() const
 		{
 			return Point<T>(X, Y + Height);
 		}
 
-		const Point<T>& BottomRight() const
+		const Point<T> BottomRight() const
 		{
 			return Point<T>(X + Width, Y + Height);
 		}
